@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+{% include head.html %}
+
+<body>
+    <div class="jumbotron jumbotron-lg jumbotron-info text-center" style="padding-top: 0; padding-bottom: 0;overflow: hidden;">
+        <div id="particles-js"></div>
+        <div class="container" style="position: fixed;top: 20%;height: 0;width: 100%;">
+            {{ content }}
+        </div>
+    </div>
+
+{% include footer.html %}
+
+<script src="{{ "/assets/js/particles.min.js" }}" type="text/javascript"></script>
+<script src="{{ "/assets/js/custom_index.js" | relative_url }}" type="text/javascript"></script>
+</body>
+</html>
