@@ -1,0 +1,38 @@
+{% if page.notmenu != true %}
+<aside class="col-md-3 col-sm-3 sidebar">
+
+    <ul class="sidenav dropable sticky sidebar-doc-syph">
+        <li>Documentação</li>
+        <li>
+            <a {% if page.menu == "m1"%}class="active"{% endif %} href="#">Começando</a>
+            <ul>
+                {% for node in site.pages %}
+                    {% if node.menu == "m1" %}
+        				{% if page.url != '/404.html' %}
+                        <li>
+                            <a href="{{ node.url | prepend: site.baseurl }}" {% if page.url == node.url %}class="active"{% endif %}>{{ node.title }}</a>
+                        </li>
+        				{% endif %}
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+
+        <li>
+            <a {% if page.menu == "m2"%}class="active"{% endif %} href="#">Componentes</a>
+            <ul>
+                {% for node in site.pages %}
+                    {% if node.menu == "m2" %}
+        				{% if page.url != '/404.html' %}
+                        <li>
+                            <a href="{{ node.url | prepend: site.baseurl }}" {% if page.url == node.url %}class="active"{% endif %}>{{ node.title }}</a>
+                        </li>
+        				{% endif %}
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+
+</aside>
+{% endif %}
